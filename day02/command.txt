@@ -1,0 +1,44 @@
+# Check kubectl
+which kubectl
+kubectl version --client
+
+# Cluster Information
+kubectl config get-clusters
+kubectl config current-context
+kubectl config get-contexts
+kubectl cluster-info
+
+# Nodes
+kubectl get nodes -o wide
+
+# Namespaces
+kubectl get ns
+
+# View all workloads
+kubectl get all -A
+
+# Pods
+kubectl get pods -A
+kubectl describe pod <pod-name>
+
+# Logs
+kubectl logs <pod-name>
+
+# Execute inside a Pod
+kubectl exec -it <pod-name> -- bash
+
+# Events
+kubectl get events -A
+
+# API Resources
+kubectl api-resources
+
+# Explain resources
+kubectl explain pod
+
+# View kubeconfig
+kubectl config view
+
+
+
+kind get clusters

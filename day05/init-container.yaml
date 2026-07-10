@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: init-demo
+
+spec:
+
+  volumes:
+  - name: data
+    emptyDir: {}
+
+  initContainers:
+
+  - name: init-message
+
+    image: busybox
+
+    command:
+    - sh
+    - -c
+    - |
+      echo "Initialization Completed" > /data/message.txt
+
+    volumeMounts:
+    - name: data
+      mountPath: /data
+
+  containers:
+
+  - name: app
+
+    image: busybox
+
+    command:
+    - sh
+    - -c
+    - |
+      cat /data/message.txt
+      sleep 3600
+
+    volumeMounts:
+    - name: data
+      mountPath: /data

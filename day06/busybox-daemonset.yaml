@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: DaemonSet
+
+metadata:
+  name: nginx-daemon
+
+spec:
+  selector:
+    matchLabels:
+      app: nginx-daemon
+
+  template:
+    metadata:
+      labels:
+        app: nginx-daemon
+
+    spec:
+      nodeSelector:
+        role: worker # if node has role = worker as a label then it will assign to that node
+
+      containers:
+      - name: busybox
+        image: busybox
+        command:
+        - sh
+        - -c
+        - |
+          while true; do
+            echo "Running on $(hostname)"
+            sleep 10
+          done

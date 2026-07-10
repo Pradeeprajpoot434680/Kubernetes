@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: spring 
+  template:
+    metadata:
+      labels:
+        app: spring 
+    spec:
+      containers:
+        - name: spring # this is used for the change the image
+          image: nginx:1.25

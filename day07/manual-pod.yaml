@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: manual-pod
+
+spec:
+
+  nodeName: kind-worker
+
+  containers:
+
+  - name: nginx
+
+    image: nginx
