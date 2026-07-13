@@ -1,0 +1,20 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+  - role: control-plane
+  - role: worker
+  - role: worker
+  - role: worker
+
+# kubectl label node affinity-demo-worker disk=ssd
+# kubectl label node affinity-demo-worker gpu=true
+
+
+# kubectl label node affinity-demo-worker2 disk=hdd
+# kubectl label node affinity-demo-worker2 backend=true
+
+
+# kubectl label node affinity-demo-worker3 disk=ssd
+# kubectl label node affinity-demo-worker3 frontend=true
+
+# kubectl get nodes --show-labels
