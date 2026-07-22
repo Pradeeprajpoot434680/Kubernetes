@@ -1,0 +1,22 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+
+metadata:
+
+  name: rahul-binding
+
+  namespace: development
+
+subjects:
+
+- kind: User
+
+  name: rahul
+
+roleRef:
+
+  kind: Role
+
+  name: developer
+
+  apiGroup: rbac.authorization.k8s.io

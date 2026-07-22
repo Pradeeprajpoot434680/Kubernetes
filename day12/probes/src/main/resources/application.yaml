@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: probes
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+  health:
+    
+
+    livenessState:
+
+      enabled: true
+
+    readinessState:
+
+      enabled: true
+        

@@ -1,0 +1,13 @@
+openssl version
+
+openssl genrsa -out developer.key 2048
+
+openssl rsa -in developer.key -text -noout
+
+openssl rsa -in developer.key -check
+
+openssl rsa -in developer.key -pubout -out developer.pub
+
+ls -l
+
+cat developer.pub
